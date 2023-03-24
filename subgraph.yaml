@@ -1,0 +1,51 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: XStreamPool
+    network: goerli
+    source:
+      address: "0x116c4f2A719298b49c3acEcB982850CD96B4e0c6"
+      abi: XStreamPool
+      startBlock: 8710320
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - FlowEndMessage
+        - FlowStartMessage
+        - FlowTopupMessage
+        - RebalanceMessageSent
+        - StreamDelete
+        - StreamStart
+        - StreamUpdate
+        - UpgradeToken
+        - XReceiveData
+        - XStreamFlowTrigger
+      abis:
+        - name: XStreamPool
+          file: ./abis/XStreamPool.json
+      eventHandlers:
+        - event: FlowEndMessage(indexed address,indexed address,int96)
+          handler: handleFlowEndMessage
+        - event: FlowStartMessage(indexed address,indexed address,int96,uint256)
+          handler: handleFlowStartMessage
+        - event: FlowTopupMessage(indexed address,indexed address,int96,uint256,uint256)
+          handler: handleFlowTopupMessage
+        - event: RebalanceMessageSent(uint256)
+          handler: handleRebalanceMessageSent
+        - event: StreamDelete(indexed address,indexed address)
+          handler: handleStreamDelete
+        - event: StreamStart(indexed address,address,int96,uint256)
+          handler: handleStreamStart
+        - event: StreamUpdate(indexed address,indexed address,int96,uint256)
+          handler: handleStreamUpdate
+        - event: UpgradeToken(indexed address,uint256)
+          handler: handleUpgradeToken
+        - event: XReceiveData(indexed address,uint32,address,uint256,bytes32,uint256,address,address,int256)
+          handler: handleXReceiveData
+        - event: XStreamFlowTrigger(indexed address,indexed address,indexed address,int96,uint256,uint256,uint256,uint256,uint256,uint32)
+          handler: handleXStreamFlowTrigger
+      file: ./src/x-stream-pool.ts

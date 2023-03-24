@@ -1,0 +1,18 @@
+{
+  "name": "scalingxstream",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ aditya172926/scalingxstream",
+    "create-local": "graph create --node http://localhost:8020/ aditya172926/scalingxstream",
+    "remove-local": "graph remove --node http://localhost:8020/ aditya172926/scalingxstream",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 aditya172926/scalingxstream",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.42.2",
+    "@graphprotocol/graph-ts": "0.29.1"
+  },
+  "devDependencies": { "matchstick-as": "0.5.0" }
+}
