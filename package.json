@@ -1,13 +1,13 @@
 {
-  "name": "scalingxstream",
+  "name": "scaling_xstream_goerli",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ aditya172926/scalingxstream",
-    "create-local": "graph create --node http://localhost:8020/ aditya172926/scalingxstream",
-    "remove-local": "graph remove --node http://localhost:8020/ aditya172926/scalingxstream",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 aditya172926/scalingxstream",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ aditya172926/scaling_xstream_goerli",
+    "create-local": "graph create --node http://localhost:8020/ aditya172926/scaling_xstream_goerli",
+    "remove-local": "graph remove --node http://localhost:8020/ aditya172926/scaling_xstream_goerli",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 aditya172926/scaling_xstream_goerli",
     "test": "graph test"
   },
   "dependencies": {

@@ -4,5 +4,11 @@
       "address": "0x116c4f2A719298b49c3acEcB982850CD96B4e0c6",
       "startBlock": 8710320
     }
+  },
+  "mumbai": {
+    "XStreamPool": {
+      "address": "0xBca65bba12F75a31433Af3851f7Ae5359B4ff093",
+      "startBlock": 33511377
+    }
   }
 }
